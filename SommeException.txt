@@ -1,9 +1,6 @@
 package igl;
 
-/**
- *
- * @author ASMAA
- */
+
 public class SommeException extends Exception{
 
     public SommeException() {
