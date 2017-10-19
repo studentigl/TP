@@ -1,6 +1,6 @@
 package igl;
 /*hhhghdhgf*/
-
+/*gghdk*/
 public class SommeException extends Exception{
 
     public SommeException() {
