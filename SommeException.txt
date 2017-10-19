@@ -1,0 +1,14 @@
+package igl;
+
+/**
+ *
+ * @author ASMAA
+ */
+public class SommeException extends Exception{
+
+    public SommeException() {
+    System.out.println("the two vectors must have the same length");
+    }
+    
+    
+}
