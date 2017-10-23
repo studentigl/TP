@@ -9,7 +9,7 @@ public class main {
        System.out.println("enter the size of the vector");
        Scanner s=new Scanner(System.in);
        int size=s.nextInt();
-       /*Création d'un objet de la classe vectorHelper*/
+       /*CrÃ©ation d'un objet de la classe vectorHelper*/
        VectorHelper objet=new VectorHelper();
        /*Initialisation du vecteur*/
        int []vector=objet.CreatVetor(size);
@@ -17,7 +17,7 @@ public class main {
        System.out.println("here is the vector");
        objet.showVector(vector);
        
-       /*Le menu qui contient les opération que l'utilisateur peut effectuer*/
+       /*Le menu qui contient les opÃ©ration que l'utilisateur peut effectuer*/
        
        System.out.println("choose the operation you want to apply to the vector \n "
                + "1 for a sorting in a descending order \n 2 for a sorting in ascending order "
@@ -27,11 +27,13 @@ public class main {
        A=sa.nextInt();
 
        switch (A){
-               /*1:trier le vecteur d'une façon decsendante*/
+               /*1:trier le vecteur d'une faÃ§on decsendante*/
                case 1:objet.decSortVector(vector);
+               break;
                      
-                /* 2:trier le vecteur d'une façon croissante*/   
+                /* 2:trier le vecteur d'une faÃ§on croissante*/   
                case 2:objet.CrSortVector(vector);
+               break;
                    
                    /*Sommer deux vecteur*/
                case 3:{
@@ -39,18 +41,30 @@ public class main {
                    Scanner s2=new Scanner(System.in);
                    int size1=s2.nextInt();
                    int [] vector1=new int[size1];
-              
-           
+                    /*bloc contenant des instructions qui peut generer une Exception*/
+                   try{
+                       objet.AddVector(vector,size1);
+                   }
+                   /*les instructions qui traitent l'Exception*/
+                   catch(SommeException E){
+                       System.err.println(E);
+                       
+                   }
+                   
+       
                    }
                break;
                    /*4:inverser le vecteur*/
                case 4:objet.reverseVector(vector);
+               break;
                    
                    /*5:Afficher le min et le max*/
                case 5:objet.minMaxVector(vector);
+               break;
                   
-                   /*6:Tester la paeité des éléments*/
+                   /*6:Tester la paeitÃ© des Ã©lÃ©ments*/
                case 6:objet.parityVector(vector);
+               break;
                    
                           
        }
