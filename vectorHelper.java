@@ -2,15 +2,45 @@
 package igl;
 import java.util.Scanner;
 
-/*la classe VectorHelper contient des methodes qui font des operations sur les vecteurs.*/
+
+/**
+ *<b> la classe VectorHelper contient des methodes qui font des operations sur les vecteurs</b>
+
+ */
 
 public class VectorHelper {
-    int []vector;
-    int i;
+ /**
+* <ul>
+* <li>Un Vecteur des entiers qui va etre utiliser dans les differentes methodes </li>
+* </ul>
+  */
+    public int []vector;
+ /**
+  * <ul>
+* <li>Une valeur entiere qui va etre utiliser dans les differentes methodes comme compteur des boucles </li>
+* </ul>
+  */
+    
+    public int i;
+/**
+  * <ul>
+* <li> le constructeur de la classe VectorHelper qui va etre utiliser dans le programme principal MAIN   </li>
+* </ul>
+* 
+  */    
+    public VectorHelper(){
+        
+    }
+    /**
+     *la fonction "CreatVector" permet de creer un Vecteur des entiers
+     * @param size represente la taille du vecteur qu'on veut créer
+     * @return retourner le vecteur crée.
+     */
 /*--------------------------------------------------------------------------------------*/
                    /*la fonction "CreatVector"qui a comme parametre 
                       la taille du vecteur à créer et le retourne */
 /*--------------------------------------------------------------------------------------*/
+    
     
     public int[] CreatVetor(int size){
        int j;
@@ -28,6 +58,11 @@ public class VectorHelper {
        return(vector);
     }
     
+    /**
+     *la fonction "ShowVector" permet d'afficher un Vecteur
+     * @param vector c'est le vecteur qu'on veut afficher ses elements.
+     * 
+     */
 /*--------------------------------------------------------------------------------------*/
         /*la fonction "ShowVector" a comme paremetre un vecteur à afficher  */
 /*--------------------------------------------------------------------------------------*/
@@ -37,7 +72,11 @@ public class VectorHelper {
             System.out.println("|"+vector[j] +"|");
          }
     }
-        
+        /**
+         *la fonction "decSortVector" permet de trier un vecteur d'une façon descendante et l'afficher
+         * @param vector c'est le vecteur qu'on veut trier
+         * @return retourne le vecteur trié de la plus grande valeur vers la plus petite.
+         */
 /*--------------------------------------------------------------------------------------*/
                              /*la fonction "decSortVector" 
          a comme parametre un vecteur à trier d'une façon descendante*/
@@ -67,6 +106,11 @@ public class VectorHelper {
     return(vector);
     }
     
+    /**
+         *la fonction "CrSortVector" permet de trier un vecteur d'une façon croissante et l'afficher
+         * @param vector le vecteur qu'on veut trier
+         * @return retourne le vecteur trié de la plus petite valeur vers la plus grande.
+         */
 /*--------------------------------------------------------------------------------------*/
                              /*la fonction "CcSortVector" 
          a comme parametre un vecteur à trier d'une façon croissante*/
@@ -96,6 +140,10 @@ public class VectorHelper {
     return(vector);
     }
  
+    /**
+         *la fonction "reverseVector" permet d'inverser et afficher un vecteur 
+         * @param vector le vecteur qu'on veut inverser. 
+         */
 /*--------------------------------------------------------------------------------------*/
     
     /*la fonction "reverseVector"à comme parametre un vecteur à afficher son inverse */
@@ -116,6 +164,12 @@ public class VectorHelper {
      showVector(v);/*afficher le vecteur inversé*/
  }
     
+    /**
+     *la fonction"minMaxVector" permet 
+     *d'afficher le min et le max d'un vecteur simultanement
+     *@param vector le vecteur dont lequel on va afficher son MAX et MIN 
+     * 
+     */
 /*--------------------------------------------------------------------------------------*/
                      /*la fonction"minMaxVector" permet 
             d'afficher le min et le max d'un vecteur simultanement */
@@ -143,6 +197,16 @@ public class VectorHelper {
         System.out.println("max is "+max +"and min is "+min);
  }
 
+    /**
+     *la fonction "AddVector" permet d'addionner les elements de deux vecteurs et lancer 
+     * une Exception s'il y a une anomalie des deux tailles
+     * 
+     * @throws SommeException Si jamais la taille des deux vecteurs est differente.
+     * @param T le premier Vecteur qui existe déja.
+     * @param size1 la taille du deuxieme vecteur.
+     * @return retourner la somme des deux vecteurs s'il n'existe aucune anomalie de taille.
+     *
+     */
 /*--------------------------------------------------------------------------------------*/
     
          /*la fonction "AddVector" permet d'addionner les elements de deux vecteurs*/
@@ -150,7 +214,9 @@ public class VectorHelper {
 /*--------------------------------------------------------------------------------------*/
     public int[] AddVector(int T[],int size1) throws SommeException{
         /*propager l'Exception pour la traiter au niveau du Main */
-     
+     /**
+      * la recuperation de la taille du premier vecteur.
+      */
         int taille1=T.length;
         /*la comparaison des tailles des deux vecteurs*/
         if (taille1 != size1){
@@ -170,7 +236,16 @@ public class VectorHelper {
  return T;
  
  }
- 
+ /**
+  *la fonction "parityVector" 
+  *permet de nous indiquer la parité des elements d"un vecteur
+  * @param T le vecteur en entrée qu'on veulent savoir la parité de ses valeurs.
+  * 
+  * @return retourne un vecteur de chaine de caratere  
+  * PAIR pour les nombres pairs et IMPAIR pour les nombres impairs
+  * 
+  */
+    
  /*--------------------------------------------------------------------------------------*/
     
                          /*la fonction "parityVector" 
