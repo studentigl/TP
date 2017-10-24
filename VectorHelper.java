@@ -42,20 +42,21 @@ public class VectorHelper {
 /*--------------------------------------------------------------------------------------*/
     
     
-    public int[] CreatVetor(int size){
+public int[] CreatVetor(int size){
        int j;
-      //l'initialisation du vecteur crée//
-       vector=new int[size]; 
-      //remplir les elements du tableau//
-       for (j=0;j<size;j++) 
-       {
-           System.out.println("enter element " +j+" of the vector");
-           Scanner e=new Scanner(System.in);
-           int element=e.nextInt();
-           vector[j]=element;
-       }
-       //le retour du vecteur crée//
+       /*Initialisation du vecteur*/
+       if(size>0){
+       vector=new int[size];
+       /*Boucle pour remplir le  vecteur */
+       for (j=0;j<size;j++){
+               System.out.println("enter element " +j+" of the vector");
+               Scanner e=new Scanner(System.in);
+               int element=e.nextInt();
+               vector[j]=element;  
+         }}
+       /*Le retour du vecteur crée*/
        return(vector);
+       
     }
     
     /**
@@ -150,32 +151,38 @@ public class VectorHelper {
     
 /*--------------------------------------------------------------------------------------*/ 
  
-    public void reverseVector(int vector[]){
-       /*créer un vecteur de la meme taille du vecteur 
-        en entrée qui va recevoir ces elements eninversés*/
-        
-        int []v=new int [vector.length];
-        int j=0;
-        /*une boucle qui parccours 
-        le vecteur du dernier element jsq premier element*/
-     for (int i=vector.length-1;i>=0;i--){      
-        v[j] =vector[i];
-         j++;}
-     showVector(v);/*afficher le vecteur inversé*/
+    /**
+     * la fonction "reverseVector" permet d'inverser et afficher un vecteur
+     * @param vector le vecteur qu'on veut inverser.
+     * @return retourne le vecteur inversé
+     */
+    public int[] reverseVector(int vector[]) {
+     /*créer un nouveau vecteur de la memme taille du vecteur en entrée qui va reçevoir
+     ces elements inversés*/
+    int []v=new int [vector.length];
+    int j=0;
+    /*Une boucle pour parcourir le vecteur commençant du dernier element jusq'au 1er element*/
+    for (int i=vector.length-1;i>=0;i--) {     
+         v[j] =vector[i];
+         j++;
+    }
+    /*Afficher le vecteur inversé*/
+    return(v);
  }
     
     /**
      *la fonction"minMaxVector" permet 
      *d'afficher le min et le max d'un vecteur simultanement
      *@param vector le vecteur dont lequel on va afficher son MAX et MIN 
+     * @return  rrtourne un vecteur de deux elements qui contients le min et le max
      * 
      */
 /*--------------------------------------------------------------------------------------*/
                      /*la fonction"minMaxVector" permet 
             d'afficher le min et le max d'un vecteur simultanement */
 /*--------------------------------------------------------------------------------------*/
-    public void minMaxVector(int vector[]){
-      
+    public int[] minMaxVector(int vector[]){
+         int [] vector1=new int[2];
         int min,max,i,j;
         /*Initialisation du Min et de Max*/
         min=vector[0];
@@ -192,18 +199,23 @@ public class VectorHelper {
                /*permutation si l'element de la case est superieur à Max*/
              {max=vector[j];}
                                       }
+         
                                     }
+       vector1[0]=min;
+       vector1[1]=max;
        /*Afficher le min et le max*/
         System.out.println("max is "+max +"and min is "+min);
+       return vector1;
  }
 
     /**
      *la fonction "AddVector" permet d'addionner les elements de deux vecteurs et lancer 
      * une Exception s'il y a une anomalie des deux tailles
      * 
+     * @param T2
      * @throws SommeException Si jamais la taille des deux vecteurs est differente.
-     * @param T le premier Vecteur qui existe déja.
-     * @param size1 la taille du deuxieme vecteur.
+     * @param T le premier Vecteur.
+     * @param T2 le deuxieme Vecteur.
      * @return retourner la somme des deux vecteurs s'il n'existe aucune anomalie de taille.
      *
      */
@@ -212,29 +224,25 @@ public class VectorHelper {
          /*la fonction "AddVector" permet d'addionner les elements de deux vecteurs*/
     
 /*--------------------------------------------------------------------------------------*/
-    public int[] AddVector(int T[],int size1) throws SommeException{
-        /*propager l'Exception pour la traiter au niveau du Main */
-     /**
-      * la recuperation de la taille du premier vecteur.
-      */
-        int taille1=T.length;
-        /*la comparaison des tailles des deux vecteurs*/
-        if (taille1 != size1){
-        /*lancer une Exception si les deux tailles sont differentes*/ 
-        throw new SommeException();
-    } 
-        /*sommer les elements si y a pas une differance entre les deux taille*/
-    else{
-        System.out.println("Enter the second Vector");
-        int V[]=CreatVetor(size1);
+    public int[] AddVector(int T[],int T2[]) throws SommeException{
+     /*Propager l'exception pour la traiter au niveau du main*/
+     int taille1=T.length; 
+     int size2=T2.length;
+     /*comparaison des tailles des deux vecteurs*/
+     if (taille1 != size2){
+         /*Lancer une exception si les deux tailles sont différentes*/
+          throw new SommeException(); 
+     }
+     else{/*sommer les elements si les deux tailles sont égaux*/
+        
+        
         for (int i=0;i<taille1;i++){
-            T[i]=T[i]+V[i];
+              T[i] += T2[i];
         }
-        //Afficher la soome des deux vecteurs//
+        /*Afficher la somme des deux vecteurs*/
         showVector(T);
-    }
- return T;
- 
+     }
+     return T;
  }
  /**
   *la fonction "parityVector" 
