@@ -1,7 +1,7 @@
-
 package igl;
 
 import java.util.Scanner;
+import javax.print.DocFlavor;
 
 /**
  * <b> la classe main represente le programme principal </b>
@@ -36,7 +36,10 @@ public class main {
        objet.showVector(vector);
        
        /*Le menu qui contient les operations que l'utilisateur peut effectuer*/
+    
        
+       String repeat="Y";
+       while(repeat.equals("Y")){
        System.out.println("choose the operation you want to apply to the vector \n "
                + "* 1 for a sorting in a descending order \n *2 for a sorting in ascending order "
                + "\n *3 to Add two vectors \n *4 to inverse the vector \n *5 to show the MinMax element \n"
@@ -54,22 +57,25 @@ public class main {
                    break;
                    /*3:sommer deux vecteurs*/
                case 3:{
-                   System.out.println("enter the size of the second vector");
+                  System.out.println("enter the size of the second vector");
                    Scanner s2=new Scanner(System.in);
-                   
                    int size1=s2.nextInt();
-                   int [] vector1=new int[size1];
-                   
-                   /*bloc contenant des instructions qui peut generer une Exception*/
-                   try{
-                       objet.AddVector(vector,size1);
+                   System.out.println("enter elements of the second vector");
+                    Scanner s3=new Scanner(System.in);
+                   int[]T=new int[size1];
+                   for(int i=0;i<T.length;i++)
+                   {
+                       T[i]=s3.nextInt();
                    }
-                   /*les instructions qui traitent l'Exception*/
+                   /*instructions pouvant générer des exceptions*/
+                   try{
+                       objet.AddVector(vector,T);
+                   }
+                   /*Les instructions qui traitent l'exception*/
                    catch(SommeException E){
-                       System.err.println(E);
+                       System.err.println( E);
                        
                    }
-           
                    }
                break;
                    /*inverser un vecteur*/
@@ -84,9 +90,10 @@ public class main {
                    break;
                           
        }
-               
-           
+              System.out.println("if you want to apply another function enter Y Else enter N ");
+              Scanner s4=new Scanner(System.in);
+              String Decission=s4.next();
+              repeat=Decission;
        }
     }
-    
-
+}
