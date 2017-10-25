@@ -2,7 +2,6 @@ package igl;
 
 import java.util.Scanner;
 import javax.print.DocFlavor;
-
 /**
  * <b> la classe main represente le programme principal </b>
  *
