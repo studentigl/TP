@@ -85,9 +85,8 @@ public class main {
                    /*afficher le min et le max d'un vecteur*/
                case 5:objet.minMaxVector(vector);
                    break;
-                   /*tester le parité des elements d'un vecteur*/
-               case 6:objet.parityVector(vector);
-                   break;
+               
+                   
                           
        }
               System.out.println("if you want to apply another function enter Y Else enter N ");
