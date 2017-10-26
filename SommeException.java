@@ -13,6 +13,7 @@ public class SommeException extends Exception{
    * dans le cas ou les deux vecteurs ayant des tailles differentes
    */
 
+  
     public SommeException() {
     
     System.out.println("the two vectors must have the same length");
