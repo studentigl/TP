@@ -37,7 +37,10 @@ public class VectorHelper {
      * @return retourner le vecteur crée.
      */
 
-    
+    /*--------------------------------------------------------------------------------------*/
+                   /*la fonction "CreatVector"qui a comme parametre 
+                      la taille du vecteur à créer et le retourne */
+/*--------------------------------------------------------------------------------------*/
     
 public int[] CreatVetor(int size){
        int j;
