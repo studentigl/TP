@@ -1,5 +1,4 @@
 package igl;
-
 import java.util.Scanner;
 import javax.print.DocFlavor;
 /**
