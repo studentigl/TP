@@ -86,6 +86,10 @@ public class main {
                case 5:objet.minMaxVector(vector);
                    break;
                
+               /*tester le parité des elements d'un vecteur*/
+               case 6:objet.parityVector(vector);
+                   break;
+               
                    
                           
        }
