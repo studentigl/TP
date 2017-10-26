@@ -2,7 +2,6 @@
 package igl;
 import java.util.Scanner;
 
-
 /**
  *<b> la classe VectorHelper contient des methodes qui font des operations sur les vecteurs</b>
 
